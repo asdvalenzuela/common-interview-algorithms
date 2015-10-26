@@ -14,32 +14,18 @@ def print_z(num):
 	1 2
 	3 4
 	"""
-	# print first line
-	num_to_print = 1
-	while num_to_print < num:
-		print str(num_to_print % 10) + '',
-		num_to_print += 1
-	print str(num_to_print % 10) + ''
-	num_to_print += 1
-
-	# print diagonal
-	diagonal = num - 2
-	if diagonal != 0:
-		space = (num-1) + (num-3)		
-		nums_printed = 0
-		while nums_printed < diagonal:
-			print ' ' * space + str(num_to_print % 10)
-			space -= 2
-			nums_printed += 1
-			num_to_print += 1
-	
-	# print second line
-	line = num
-	nums_printed = 0
-	while nums_printed < line:
-		print str(num_to_print % 10) + '',
-		nums_printed += 1
-		num_to_print += 1
+    num = 1
+    for i in xrange(n):
+    	for j in xrange(n):
+    		if i == 0 or i == n-1:
+    			print num % 10,
+	        	num += 1
+	        elif j == (n - (i+1)):
+	        	print num % 10,
+	    		num += 1
+      		else:
+	        	print ' ',
+	    	print 
 
 if __name__ == "__main__":
     from doctest import testmod
